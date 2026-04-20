@@ -34,6 +34,9 @@ The preparation layer supports three routes into FANMOD/CISM-compatible network 
 - annotated edge tables -> colored edge lists
 - prebuilt `networkx` graphs or graph files -> colored edge lists
 
+[data_preparation](README_resources/data_preparation.png)
+
+
 ### Prepare dataset for analysis
 In order to analyze the proteomics data, we need to convert each patient's field of view (FOV) to a graph and store the graphs in a folder.
 Folder structure (with 1..n patients and 1..f field-of-view):
