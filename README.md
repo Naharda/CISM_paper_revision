@@ -55,7 +55,7 @@ Each field-of-view file should be in the following format:
 
 For example assume the following graph:
 
-![LEDA_format](ReadME_resources/LEDA_format.png)
+![LEDA_format](README_resources/LEDA_format.png)
 
 
 The preparation layer supports three routes into FANMOD/CISM-compatible network files:
