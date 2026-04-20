@@ -49,6 +49,7 @@ each txt file represents a field of view (FOV) of a patient and should be in the
 
 #### Patient_\<i>_FOV\<k>.txt format
 Each field-of-view file should be in the following format:
+
 <src cell id> <dst cell id> <src cell color id> <dst cell color id>
 .....
 <src cell id> <dst cell id> <src cell color id> <dst cell color id>
