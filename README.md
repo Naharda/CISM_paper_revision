@@ -28,16 +28,45 @@ The package now exposes the workflow as:
 2. `initialization`
 3. `analysis`
 
+
+### Prepare dataset for analysis
+In order to analyze the proteomics data, we need to convert each patient's field of view (FOV) to a graph and store the graphs in a folder.
+
+For FANMOD+ to work properly and later provide the necessary information for CISM, , we need to convert each patient's field of view (FOV) to a graph and store the graphs in a folder.
+The graph should specifically be in the format of colored edge list in the following format:
+
+Folder structure (with 1..n patients and 1..f field-of-view):
+- data
+  - Dataset Name
+    - Patient_1_FOV1.txt
+    - Patient_2_FOV2.txt
+    - ...
+    - ...
+    - Patient_\<n>_FOV\<f>.txt
+    - patient_class.csv
+
+each txt file represents a field of view (FOV) of a patient and should be in the following format:
+
+#### Patient_\<i>_FOV\<k>.txt format
+Each field-of-view file should be in the following format:
+<src cell id> <dst cell id> <src cell color id> <dst cell color id>
+.....
+<src cell id> <dst cell id> <src cell color id> <dst cell color id>
+
+For example assume the following graph:
+
+![LEDA_format](ReadME_resources/LEDA_format.png)
+
+
 The preparation layer supports three routes into FANMOD/CISM-compatible network files:
 
-- annotated centroid tables -> graph builder -> colored edge lists
-- annotated edge tables -> colored edge lists
-- prebuilt `networkx` graphs or graph files -> colored edge lists
+- annotated centroid tables &rarr; graph builder &rarr; colored edge LEDA txt files
+- annotated edge tables &rarr; colored edge LEDA txt files
+- prebuilt `networkx` graphs &rarr; graph files &rarr; colored edge LEDA txt files
 
 ![data_preparation](README_resources/data_preparation.png)
 
 
-### Prepare dataset for analysis
 In order to analyze the proteomics data, we need to convert each patient's field of view (FOV) to a graph and store the graphs in a folder.
 Folder structure (with 1..n patients and 1..f field-of-view):
 - data
