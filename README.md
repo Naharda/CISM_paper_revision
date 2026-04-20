@@ -34,7 +34,7 @@ The preparation layer supports three routes into FANMOD/CISM-compatible network 
 - annotated edge tables -> colored edge lists
 - prebuilt `networkx` graphs or graph files -> colored edge lists
 
-[data_preparation](README_resources/data_preparation.png)
+![data_preparation](README_resources/data_preparation.png)
 
 
 ### Prepare dataset for analysis
