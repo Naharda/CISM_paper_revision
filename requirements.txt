@@ -1,0 +1,16 @@
+alphashape
+dotmotif
+joblib
+matplotlib
+networkx
+numpy
+opencv-python
+optuna
+pandas
+scikit-learn
+scipy
+shap
+shapely
+torch
+torch-geometric
+tqdm
