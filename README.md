@@ -24,9 +24,14 @@ CISM is a two-step method to identify local interconnected cell structures assoc
 ### 3-step pipeline
 The package now exposes the workflow as:
 
-1. `data_preparation`
-2. `initialization`
-3. `analysis`
+1. `data_preparation` - make the dataset compatible with FANMOD+ and CISM
+2. `initialization` - run FANMOD+ and initialize CISM class with the configuration and dataset
+3. `analysis` - analyze CISM outputs
+
+Notebook tutorials live at the repository level, outside the `cism` package itself.
+The first tutorial notebook is:
+
+- `tutorials/01_data_preparation.ipynb`
 
 
 ### Prepare dataset for analysis
@@ -47,7 +52,7 @@ Folder structure (with 1..n patients and 1..f field-of-view):
 
 each txt file represents a field of view (FOV) of a patient and should be in the following format:
 
-#### Patient_\<i>_FOV\<k>.txt format
+#### Patient_\<i>_FOV\<k>.txt format (LEDA)
 Each field-of-view file should be in the following format:
 
 `<src cell id> <dst cell id> <src cell color id> <dst cell color id>
@@ -66,43 +71,6 @@ The preparation layer supports three routes into FANMOD/CISM-compatible network 
 - prebuilt `networkx` graphs &rarr; graph files &rarr; colored edge LEDA txt files
 
 ![data_preparation](README_resources/data_preparation.png)
-
-
-In order to analyze the proteomics data, we need to convert each patient's field of view (FOV) to a graph and store the graphs in a folder.
-Folder structure (with 1..n patients and 1..f field-of-view):
-- data
-  - Dataset Name
-    - Patient_1_FOV1.txt
-    - Patient_2_FOV2.txt
-    - ...
-    - ...
-    - Patient_\<n>_FOV\<f>.txt
-    - patient_class.csv
-
-#### Patient_\<i>_FOV\<k>.txt format
-Each field-of-view file should be in the following format:
-<src cell id> <dst cell id> <src cell color id> <dst cell color id>
-.....
-<src cell id> <dst cell id> <src cell color id> <dst cell color id>
-
-For example assume the following adjacency matrix:
-
-    0 1 1
-    1 0 0
-    1 0 0
-
-with nodes colors:
-
-    color[0] = 0
-    color[1] = 1
-    color[2] = 2
-
-The matrix should be represented as a colord edge list:
-
-    0 1 0 1
-    1 0 1 0
-    2 1 2 1
-    1 2 1 2
 
 #### patient_class.csv format
 CISM method support two classes type:
