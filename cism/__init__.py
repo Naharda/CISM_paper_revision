@@ -1,4 +1,9 @@
-from cism.analysis import PairwiseAnalysis
+from cism.analysis import (
+    PairwiseAnalysis,
+    export_top_motif_visualization_inputs,
+    motif_to_annotation_text,
+    rank_motifs_by_stringency_count,
+)
 from cism.cism import (
     AnalyzeMotifsResult,
     CISM,
@@ -30,12 +35,15 @@ __all__ = [
     "DatasetValidationError",
     "DiscoverResult",
     "DiscriminativeFeatureKey",
+    "export_top_motif_visualization_inputs",
     "GraphBuilder",
     "HardDiscriminativeFC",
     "InferenceFC",
+    "motif_to_annotation_text",
     "OptunaTuningResult",
     "PairwiseAnalysis",
     "PreparationResult",
+    "rank_motifs_by_stringency_count",
     "SoftDiscriminativeFC",
     "TissueStateDiscriminativeMotifs",
     "TopNFC",
