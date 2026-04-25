@@ -29,9 +29,10 @@ The package now exposes the workflow as:
 3. `analysis` - analyze CISM outputs
 
 Notebook tutorials live at the repository level, outside the `cism` package itself.
-The first tutorial notebook is:
+The first tutorial notebooks are:
 
 - `tutorials/01_data_preparation.ipynb`
+- `tutorials/02_fanmod_and_cism_initialization.ipynb`
 
 
 ### Prepare dataset for analysis
